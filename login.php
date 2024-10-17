@@ -31,7 +31,7 @@ if(isset($_POST['form1'])) {
                     $error_message .= "Vui lòng nhập lại mật khẩu".'<br>';
                 } else {
                     $_SESSION['customer'] = $row;
-                    header("location: ".BASE_URL."index.php");
+                    header("location: ".BASE_URL."caidat.php");
                 }
             }
             

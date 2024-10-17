@@ -137,7 +137,7 @@ foreach ($result as $row) {
 					} else {
 						?>
 						<li><a href="login.php"><i class="fa fa-sign-in"></i> <?php echo "Đăng nhập	"; ?></a></li>
-						<li><a href="registration.php"><i class="fa fa-user-plus"></i> <?php echo "Đăng kí"; ?></a></li>
+						<li><a href="dangki.php"><i class="fa fa-user-plus"></i> <?php echo "Đăng kí"; ?></a></li>
 						<?php	
 					}
 					?>

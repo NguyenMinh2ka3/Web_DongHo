@@ -1,21 +1,16 @@
 
 <section class="home-newsletter">
 	<div class="container">
-		<div class="row">
-			
-				<style>
-					.single1{
-						color: white;
-					}
-					
-				</style>
-				<a class="single1">
+		<style>
+			.minh{
+				color: whitesmoke;
+			}
+		</style>
+		<div class="minh">		
 				<p>Nguyễn Đức Minh - DHTI15A5HN</p>
 				<p>Nguyễn Đức Minh - DHTI15A5HN</p>
 				<p>Nguyễn Đức Minh - DHTI15A5HN</p>
 				<p>Nguyễn Đức Minh - DHTI15A5HN</p>	
-			</a>
-	
 	</div>
 </section>
 <div class="footer-bottom">
@@ -27,11 +22,11 @@
 		</div>
 	</div>
 </div>
-
-
 <a href="#" class="scrollup">
 	<i class="fa fa-angle-up"></i>
 </a>
+
+
 <script src="assets/js/jquery-2.2.4.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
 <script src="https://js.stripe.com/v2/"></script>
