@@ -2,11 +2,11 @@
 <section class="home-newsletter">
 	<div class="container">
 		<style>
-			.minh{
+			.minhdaumaminh{
 				color: whitesmoke;
 			}
 		</style>
-		<div class="minh">		
+		<div class="minhdaumaminh">		
 				<p>Nguyễn Đức Minh - DHTI15A5HN</p>
 				<p>Nguyễn Đức Minh - DHTI15A5HN</p>
 				<p>Nguyễn Đức Minh - DHTI15A5HN</p>
