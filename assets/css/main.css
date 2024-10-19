@@ -1023,7 +1023,7 @@ Mobile style's
 }
 
 
-ul.prod-slider li {
+.prod-slider  {
     height: 450px;
     background-repeat: no-repeat;
     -webkit-background-size: cover;
@@ -1031,7 +1031,7 @@ ul.prod-slider li {
     background-position: top center;
     position: relative;
 }
-ul.prod-slider li a {
+.prod-slider  a {
     position: absolute;
     top: 0;
     left: 0;

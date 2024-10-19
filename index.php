@@ -117,16 +117,11 @@ button:hover{
                     <p class="price"><b><?php echo $row["sp_giamoi"];?></b></p>
                     <p class="discount"><del><?php echo $row["sp_giacu"];?></del></p>
                 </div>
-                <button class="add" ><b>Thêm giỏ hàng</b></button>
+                <button class="add"><a href="product.php?id=<?php echo $row['sp_id'];?>"><b>Xem chi tiết</b></a></button>
             </div>
             <?php }?>
         </main>
-     
-
-
-
-
-
+    
     </div>
 </div>
 
