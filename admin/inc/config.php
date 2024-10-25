@@ -2,9 +2,6 @@
 // Error Reporting Turn On
 ini_set('error_reporting', E_ALL);
 
-// Setting up the time zone
-date_default_timezone_set('Asia/Dubai');
-
 // Host Name
 $dbhost = 'localhost';
 
