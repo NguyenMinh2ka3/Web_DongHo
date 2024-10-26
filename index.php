@@ -2,12 +2,11 @@
 
 <style>
     .item1{
-     position: relative;
+        display: flex;
      margin: 0;
      top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    left: 0px;
+    text-align: center;
     }
 
 .tieude{
@@ -46,6 +45,44 @@ button:hover{
     background-color: aquamarine;
 }
    
+.anhbanner {
+    flex: 2; 
+    background-color: #e0e0e0;
+}
+
+.left-menu {
+    flex: 1; 
+    width: 200px;
+    background-color: #f8f8f8;
+    padding: 15px;
+    border: 1px solid #ccc;
+    font-family: Arial, sans-serif;
+    
+}
+
+.left-menu h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.left-menu ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.left-menu ul li {
+    margin-bottom: 8px;
+}
+
+.left-menu ul li a {
+    color: #555;
+    text-decoration: none;
+}
+
+
+
+
 </style>
 
 
@@ -54,23 +91,34 @@ button:hover{
 
 <?php  
     require_once 'admin/inc/config.php';
-    $sql = $pdo->prepare("SELECT * FROM sanpham");
+    $sql = $pdo->prepare("SELECT * FROM sanpham where sp_id BETWEEN 1 AND 10");
     $sql ->execute();
-    $tatca_sp=$sql->fetchAll(PDO::FETCH_ASSOC)
+    $tatca_sp=$sql->fetchAll(PDO::FETCH_ASSOC);
+
+    $sql1 = $pdo->prepare("SELECT * FROM sanpham where sp_id BETWEEN 11 AND 20");
+    $sql1 ->execute();
+    $tatca_sp1=$sql1->fetchAll(PDO::FETCH_ASSOC);
+
+    $sql2 = $pdo->prepare("SELECT * FROM sanpham where sp_id BETWEEN 21 AND 30");
+    $sql2 ->execute();
+    $tatca_sp2=$sql2->fetchAll(PDO::FETCH_ASSOC)
+   
 ?>
  
-
 <div class="item1" >
-                <div class="bs-slider-overlay"><img src="assets/uploads/BannerVip1.jpg" alt=""></div>
-                <div class="container">
-                    <div class="row">
-                        <div class="slide-text">
-                            <a href=""></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+<div class="left-menu">
+    <h3>Danh Mục Sản Phẩm</h3>
+    <ul>
+        <li><a href="index.php?#selection1">Sản phẩm bán chạy</a></li>
+        <li><a href="index.php?#selection2">Hàng mới về</a></li>
+        <li><a href="index.php?#selection3">Mẫu cổ điển</a></li>     
+    </ul>
+</div>   
+    <div class="anhbanner">
+               <img src="assets/uploads/BannerVip2.jpg" alt="">  
+               </div>
+                        
+</div>
    <div class="service bg-gray">
     <div class="container">
         <div class="row">
@@ -105,7 +153,8 @@ button:hover{
               </div>
               </div>             
         </div>
-<div class="tieude"><h1><b>SẢN PHẨM</b></h1></div>
+<div class="tieude" id="selection1"><h1><b>SẢN PHẨM BÁN CHẠY</b></h1></div>
+                         
         <main class="minh">
             <?php foreach($tatca_sp as $row){ ?>
             <div class="card">
@@ -122,6 +171,42 @@ button:hover{
             <?php }?>
         </main>
     
+        <div class="tieude" id="selection2"><h1><b>HÀNG MỚI VỀ</b></h1></div>
+                         
+                         <main class="minh">
+                             <?php foreach($tatca_sp1 as $row){ ?>
+                             <div class="card">
+                                 <div class="image">
+                                     <img src="assets/uploads/<?php echo $row["sp_img"];?>" alt="">
+                                 </div>
+                                 <div class="caption">
+                                     <p class="product_name"><b><?php echo $row["sp_ten"];?></b></p>
+                                     <p class="price"><b><?php echo $row["sp_giamoi"];?></b></p>
+                                     <p class="discount"><del><?php echo $row["sp_giacu"];?></del></p>
+                                 </div>
+                                 <button class="add"><a href="product.php?id=<?php echo $row['sp_id'];?>"><b>Xem chi tiết</b></a></button>
+                             </div>
+                             <?php }?>
+                         </main>
+
+       <div class="tieude" id="selection3"><h1><b>MẪU CỔ ĐIỂN</b></h1></div>
+                         
+                         <main class="minh">
+                             <?php foreach($tatca_sp2 as $row){ ?>
+                             <div class="card">
+                                 <div class="image">
+                                     <img src="assets/uploads/<?php echo $row["sp_img"];?>" alt="">
+                                 </div>
+                                 <div class="caption">
+                                     <p class="product_name"><b><?php echo $row["sp_ten"];?></b></p>
+                                     <p class="price"><b><?php echo $row["sp_giamoi"];?></b></p>
+                                     <p class="discount"><del><?php echo $row["sp_giacu"];?></del></p>
+                                 </div>
+                                 <button class="add"><a href="product.php?id=<?php echo $row['sp_id'];?>"><b>Xem chi tiết</b></a></button>
+                             </div>
+                             <?php }?>
+                         </main>         
+                           
     </div>
 </div>
 

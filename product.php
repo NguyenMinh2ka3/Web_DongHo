@@ -1,5 +1,15 @@
 <?php require_once('header.php'); ?>
-
+<style>
+    .tbchitiet{
+        text-align: center;
+        height: 300px;
+    }
+</style>
+<?php if(!isset($_SESSION['customer'])): ?>
+                    <p class="tbchitiet">
+                        <a href="login.php" class="btn btn-md btn-danger"><?php echo "Vui lòng đăng nhập !"; ?></a>
+                    </p>
+                <?php else: ?>
 <?php
 if(!isset($_REQUEST['id'])) {
     header('location: index.php');
@@ -96,4 +106,5 @@ if(isset($_POST['form_add_to_cart'])) {
         </div>
     </div>
 </div>
+<?php endif; ?>
 <?php require_once('footer.php'); ?>

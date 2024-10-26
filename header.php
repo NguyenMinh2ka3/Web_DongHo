@@ -165,12 +165,9 @@ foreach ($result as $row) {
 				<div class="menu-container">
 					<div class="menu">
 						<ul>
-							<li><a href="index.php">Trang chủ</a></li>		
-							<li><a href="product-category.php">Bán chạy nhất</a></li>
-							<li><a href="product-category.php">Hàng mới về</a></li>
-							<li><a href="product-category.php">Mẫu cổ điển</a></li>
-							<li><a href="about.php">Về chúng tôi</a></li>
-							<li><a href="faq.php">FAQ</a></li>
+							<li><a href="index.php">Trang chủ</a></li>									
+							<li><a href="index.php">Về chúng tôi</a></li>
+							<li><a href="index.php">FAQ</a></li>
 							<li><a href="contact.php">Liên hệ</a></li>
 						</ul>
 					</div>
