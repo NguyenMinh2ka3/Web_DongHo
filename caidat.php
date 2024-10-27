@@ -2,12 +2,12 @@
 
 
 <?php
-// Check if the customer is logged in or not
+// Kiểm tra xem khách hàng đã đăng nhập hay chưa
 if(!isset($_SESSION['customer'])) {
     header('location: '.BASE_URL.'logout.php');
     exit;
 } else {
-    // If customer is logged in, but admin make him inactive, then force logout this user.
+    //Nếu khách hàng đăng nhập mà trạng thái 0 thì buộc đăng xuất
     $statement = $pdo->prepare("SELECT * FROM khachhang WHERE kh_id=? AND kh_trangthai=?");
     $statement->execute(array($_SESSION['customer']['kh_id'],0));
     $total = $statement->rowCount();

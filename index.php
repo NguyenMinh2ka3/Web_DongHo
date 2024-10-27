@@ -57,6 +57,7 @@ button:hover{
     padding: 15px;
     border: 1px solid #ccc;
     font-family: Arial, sans-serif;
+    text-align: center;
     
 }
 
@@ -109,9 +110,9 @@ button:hover{
 <div class="left-menu">
     <h3>Danh Mục Sản Phẩm</h3>
     <ul>
-        <li><a href="index.php?#selection1">Sản phẩm bán chạy</a></li>
-        <li><a href="index.php?#selection2">Hàng mới về</a></li>
-        <li><a href="index.php?#selection3">Mẫu cổ điển</a></li>     
+        <li><a href="index.php?#spbanchay">Sản phẩm bán chạy</a></li>
+        <li><a href="index.php?#hangmoive">Hàng mới về</a></li>
+        <li><a href="index.php?#maucodien">Mẫu cổ điển</a></li>     
     </ul>
 </div>   
     <div class="anhbanner">
@@ -153,7 +154,7 @@ button:hover{
               </div>
               </div>             
         </div>
-<div class="tieude" id="selection1"><h1><b>SẢN PHẨM BÁN CHẠY</b></h1></div>
+<div class="tieude" id="spbanchay"><h1><b>SẢN PHẨM BÁN CHẠY</b></h1></div>
                          
         <main class="minh">
             <?php foreach($tatca_sp as $row){ ?>
@@ -171,7 +172,7 @@ button:hover{
             <?php }?>
         </main>
     
-        <div class="tieude" id="selection2"><h1><b>HÀNG MỚI VỀ</b></h1></div>
+        <div class="tieude" id="hangmoive"><h1><b>HÀNG MỚI VỀ</b></h1></div>
                          
                          <main class="minh">
                              <?php foreach($tatca_sp1 as $row){ ?>
@@ -189,7 +190,7 @@ button:hover{
                              <?php }?>
                          </main>
 
-       <div class="tieude" id="selection3"><h1><b>MẪU CỔ ĐIỂN</b></h1></div>
+       <div class="tieude" id="maucodien"><h1><b>MẪU CỔ ĐIỂN</b></h1></div>
                          
                          <main class="minh">
                              <?php foreach($tatca_sp2 as $row){ ?>

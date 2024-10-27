@@ -86,7 +86,7 @@ if(!isset($_REQUEST['search_text'])) {
             </div>
             <?php endforeach; ?>
             <?php else: ?>
-        <h1>Không tìm thấy sản phẩm nào.</h1>
+        <h1 class="text-danger">Không tìm thấy sản phẩm nào.</h1>
     <?php endif; ?>
         </main>
     
