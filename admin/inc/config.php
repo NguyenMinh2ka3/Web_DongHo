@@ -25,5 +25,5 @@ try {
 	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
 catch( PDOException $exception ) {
-	echo "Connection error :" . $exception->getMessage();
+	echo "Kết nối thất bại :" . $exception->getMessage();
 }

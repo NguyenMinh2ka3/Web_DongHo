@@ -164,8 +164,8 @@ button:hover{
                 </div>
                 <div class="caption">
                     <p class="product_name"><b><?php echo $row["sp_ten"];?></b></p>
-                    <p class="price"><b><?php echo $row["sp_giamoi"];?></b></p>
-                    <p class="discount"><del><?php echo $row["sp_giacu"];?></del></p>
+                    <p class="price"><?php echo "$";?><b><?php echo $row["sp_giamoi"];?></b></p>
+                    <p class="discount"><del><?php echo "$";?><?php echo $row["sp_giacu"];?></del></p>
                 </div>
                 <button class="add"><a href="product.php?id=<?php echo $row['sp_id'];?>"><b>Xem chi tiết</b></a></button>
             </div>
@@ -182,8 +182,8 @@ button:hover{
                                  </div>
                                  <div class="caption">
                                      <p class="product_name"><b><?php echo $row["sp_ten"];?></b></p>
-                                     <p class="price"><b><?php echo $row["sp_giamoi"];?></b></p>
-                                     <p class="discount"><del><?php echo $row["sp_giacu"];?></del></p>
+                                     <p class="price"><?php echo "$";?><b><?php echo $row["sp_giamoi"];?></b></p>
+                                     <p class="discount"><del><?php echo "$";?><?php echo $row["sp_giacu"];?></del></p>
                                  </div>
                                  <button class="add"><a href="product.php?id=<?php echo $row['sp_id'];?>"><b>Xem chi tiết</b></a></button>
                              </div>
@@ -200,8 +200,8 @@ button:hover{
                                  </div>
                                  <div class="caption">
                                      <p class="product_name"><b><?php echo $row["sp_ten"];?></b></p>
-                                     <p class="price"><b><?php echo $row["sp_giamoi"];?></b></p>
-                                     <p class="discount"><del><?php echo $row["sp_giacu"];?></del></p>
+                                     <p class="price"><?php echo "$";?><b><?php echo $row["sp_giamoi"];?></b></p>
+                                     <p class="discount"><del><?php echo "$";?><?php echo $row["sp_giacu"];?></del></p>
                                  </div>
                                  <button class="add"><a href="product.php?id=<?php echo $row['sp_id'];?>"><b>Xem chi tiết</b></a></button>
                              </div>
@@ -210,7 +210,4 @@ button:hover{
                            
     </div>
 </div>
-
-
-
 <?php require_once('footer.php'); ?>

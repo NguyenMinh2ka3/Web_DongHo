@@ -7,10 +7,10 @@
 			}
 		</style>
 		<div class="minhdaumaminh">		
-				<p>Nguyễn Đức Minh - DHTI15A5HN</p>
-				<p>Nguyễn Đức Minh - DHTI15A5HN</p>
-				<p>Nguyễn Đức Minh - DHTI15A5HN</p>
-				<p>Nguyễn Đức Minh - DHTI15A5HN</p>	
+				<p>Nguyễn Đức Minh </p>
+				<p>Nguyễn Đức Minh </p>
+				<p>Nguyễn Đức Minh </p>
+				
 	</div>
 </section>
 <div class="footer-bottom">
