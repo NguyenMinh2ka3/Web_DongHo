@@ -35,21 +35,28 @@ if(isset($_POST['form_them_giohang'])) {
 	}
 	if($_POST['soluong'] > $current_p_qty):
 		 $thongbao= "Xin lỗi mặt hàng này chỉ còn $current_p_qty sản phẩm! Vui lòng nhập lại số lượng!";
-    else:
-        if (isset($_SESSION['giohang_id'])) {
+   
+ else:if (isset($_SESSION['giohang_id'])) {
             $arr_cart_p_id = array();
             $arr_cart_p_qty = array();
-            $arr_cart_p_current_price = array();   
+            $arr_cart_p_current_price = array();
+            $arr_cart_p_name = array();   
             $i=0;
             foreach($_SESSION['giohang_id'] as $key => $value) 
             {
                 $i++;
                 $arr_cart_p_id[$i] = $value;
             }
+            foreach($_SESSION['cart_name_id'] as $key => $value) 
+        {
+            $i++;
+            $arr_cart_p_name[$i] = $value;
+        }
     
             $added = 0;
+            $tensp = isset($_POST['tensp']) ? $_POST['tensp'] : "";
             for($i=1;$i<=count($arr_cart_p_id);$i++) {
-                if( ($arr_cart_p_id[$i]==$_REQUEST['id'])) {
+                if( ($arr_cart_p_id[$i]==$_POST['id'])&&($arr_cart_p_name[$i] == $tensp) ) {
                     $added = 1;
                     break;
                 }
@@ -65,7 +72,7 @@ if(isset($_POST['form_them_giohang'])) {
                 }
                 $new_key = $i+1;
 
-                $_SESSION['giohang_id'][$new_key] = $_POST['id'];
+                $_SESSION['giohang_id'][$new_key] = $_REQUEST['id'];
                 $_SESSION['giohang_soluong'][$new_key] = $_POST['soluong'];
                 $_SESSION['giohang_giamoi'][$new_key] = $_POST['giamoi'];
                 $_SESSION['giohang_ten'][$new_key] = $_POST['tensp'];
@@ -78,7 +85,7 @@ if(isset($_POST['form_them_giohang'])) {
         
         else
     {       
-        $_SESSION['giohang_id'][1] = $_POST['id'];
+        $_SESSION['giohang_id'][1] = $_REQUEST['id'];
         $_SESSION['giohang_soluong'][1] = $_POST['soluong'];
         $_SESSION['giohang_giamoi'][1] = $_POST['giamoi'];
         $_SESSION['giohang_ten'][1] = $_POST['tensp'];
@@ -129,7 +136,7 @@ if($success_message1 != '') {
                                     <?php if($p_old_price!=''): ?>
                                         <del><?php echo "$";?><?php echo $p_old_price; ?></del>
                                     <?php endif; ?> 
-                                    <?php echo "$";?><?php echo $p_current_price; ?>
+                                    <?php echo "$"; ?><?php echo $p_current_price; ?>
                                 </span>
                             </div>
                             <input type="hidden" name="giamoi" value="<?php echo $p_current_price; ?>">

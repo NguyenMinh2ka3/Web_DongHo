@@ -1,37 +1,49 @@
+
+<style>
+      .giohang{
+        text-align: center;
+        height: 300px;
+    }
+</style>    
 <?php require_once('header.php'); ?>
 <?php
 $error_message = '';
-$success_message = '';
-
-if (isset($_POST['form1'])) {
-    $product_ids = implode(',', array_map('intval', $_POST['sanpham_id']));
-    $statement = $pdo->prepare("SELECT * FROM sanpham WHERE sp_id IN ($product_ids)");
+if(isset($_POST['form1'])) {
+ // Truy xuất dữ liệu sản phẩm từ cơ sở dữ liệu
+    $statement = $pdo->prepare("SELECT * FROM sanpham");
     $statement->execute();
     $products = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-    $product_data = [];
-    foreach ($products as $product) {
-        $product_data[$product['sp_id']] = $product['sp_tonkho'];
-    }
+    // Lưu dữ liệu sản phẩm từ DB vào các mảng
+    $table_product_id = array_column($products, 'sp_id');
+    $table_quantity = array_column($products, 'sp_tonkho');
 
-    $allow_update = true;
-    foreach ($_POST['sanpham_id'] as $index => $sanpham_id) {
-        $sanpham_ten = $_POST['sanpham_ten'][$index];
-        $soluong = $_POST['soluong'][$index];
+    // Lưu dữ liệu từ form vào các mảng
+    $arr1 = $_POST['sanpham_id'];
+    $arr2 = $_POST['soluong'];
+    $arr3 = $_POST['sanpham_ten'];
 
-        if (!isset($product_data[$sanpham_id]) || $product_data[$sanpham_id] < $soluong) {
-            $allow_update = false;
-            $error_message .= 'Số lượng "' . $soluong . '" không đủ cho sản phẩm "' . $sanpham_ten . '".' . PHP_EOL;
+    $allow_update = 1;
+    foreach ($arr1 as $index => $product_id) {
+        $temp_index = array_search($product_id, $table_product_id);
+        if ($table_quantity[$temp_index] < $arr2[$index]) {
+            $allow_update = 0;
+            $error_message .= '"Số lượng '.$arr2[$index].' chiếc" không có sẵn cho sản phẩm "'.$arr3[$index].'"\n';
         } else {
-            $_SESSION['giohang_soluong'][$index + 1] = $soluong;
+            $_SESSION['giohang_soluong'][$index + 1] = $arr2[$index];
         }
     }
+   //Thông báo 
+    $error_message .= '\nSố lượng mặt hàng khác đã được cập nhật thành công!';
+    ?>
 
-    if ($allow_update) {
-        $success_message = 'Cập nhật giỏ hàng thành công!';
-    }
-}
-?>
+    <?php if($allow_update == 0): ?>
+        <script>alert('<?php echo $error_message; ?>');</script>
+    <?php else: ?>
+        <script>alert('Cập nhật số lượng tất cả các mặt hàng thành công!');</script>
+    <?php endif; ?>
+
+<?php } ?>
 
 <?php if ($error_message): ?>
     <script>alert('<?php echo nl2br($error_message); ?>');</script>
@@ -45,13 +57,17 @@ if (isset($_POST['form1'])) {
 <div class="page">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-12">
-
-                <?php if(!isset($_SESSION['giohang_id'])): ?>
-                    <?php echo 'Giỏ hàng trống'; ?>
+			<div class="col-md-12"> 
+                <?php
+                //Hiển thị giỏ hàng
+                if(!isset($_SESSION['giohang_id'])): ?>
+                       <h2 class="giohang"><b><?php echo 'Giỏ hàng trống'; ?></b></h2> 
                 <?php else: ?>
                 <form action="" method="post">
-                    <?php $csrf->echoInputField(); ?>
+                    <?php $csrf->echoInputField();
+                    
+                    //Hiển thị sản phẩm trong giỏ hàng
+                    ?>
 				<div class="cart">
                     <table class="table table-responsive">
                         <tr>
@@ -64,7 +80,7 @@ if (isset($_POST['form1'])) {
                             <th class="text-center" style="width: 100px;"><?php echo "Xóa"; ?></th>
                         </tr>
                         <?php
-                     $table_total_price = 0; // Khởi tạo tổng tiền của giỏ hàng
+                      $table_total_price = 0; // Khởi tạo tổng tiền của giỏ hàng
                         $i=0;
                         foreach($_SESSION['giohang_id'] as $key => $value) 
                         {
@@ -121,7 +137,7 @@ if (isset($_POST['form1'])) {
                               <?php echo "$"; ?><?php echo $row_total_price; ?>
                             </td>
                             <td class="text-center">
-                                <a onclick="return confirmDelete();" href="giohang_delete.php?id=<?php echo $arr_cart_p_id[$i]; ?>" class="trash"><i class="fa fa-trash"></i></a>
+                                <a  href="giohang_delete.php?id=<?php echo $arr_cart_p_id[$i]; ?>&name=<?php echo  $arr_cart_p_name[$i]; ?>" class="trash"><i class="fa fa-trash"></i></a>
                             </td>
                         </tr>
                         <?php endfor; ?>
@@ -132,7 +148,6 @@ if (isset($_POST['form1'])) {
                         </tr>
                     </table> 
                 </div>
-
                 <div class="cart-buttons">
                     <ul>
                         <li><input type="submit" value="<?php echo "Cập nhật lại giỏ hàng"; ?>" class="btn btn-primary" name="form1"></li>
@@ -142,9 +157,6 @@ if (isset($_POST['form1'])) {
                 </div>
                 </form>
                 <?php endif; ?>
-
-                
-
 			</div>
 		</div>
 	</div>
