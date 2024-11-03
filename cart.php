@@ -142,7 +142,7 @@ if(isset($_POST['form1'])) {
                         </tr>
                         <?php endfor; ?>
                         <tr>
-                            <th colspan="7" class="total-text">Total</th>
+                            <th colspan="7" class="total-text">Tổng tiền</th>
                             <th class="total-amount"><?php echo "$"; ?><?php echo $table_total_price; ?></th>
                             <th></th>
                         </tr>
@@ -152,7 +152,7 @@ if(isset($_POST['form1'])) {
                     <ul>
                         <li><input type="submit" value="<?php echo "Cập nhật lại giỏ hàng"; ?>" class="btn btn-primary" name="form1"></li>
                         <li><a href="index.php" class="btn btn-primary"><?php echo "Tiếp tục mua"; ?></a></li>
-                        <li><a href="thanhtoan.php" class="btn btn-primary"><?php echo "Thanh toán"; ?></a></li>
+                        <li><a href="checkout.php" class="btn btn-primary"><?php echo "Thanh toán"; ?></a></li>
                     </ul>
                 </div>
                 </form>

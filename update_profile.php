@@ -129,17 +129,18 @@ if (isset($_POST['form1'])) {
                             <div class="col-md-6 form-group">
                                 <label for=""><?php echo "Quốc gia"; ?> *</label>
                                 <select name="cust_country" class="form-control">
-                                <?php
-                                $statement = $pdo->prepare("SELECT * FROM quocgia ORDER BY country_name ASC");
-                                $statement->execute();
-                                $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-                                foreach ($result as $row) {
-                                    ?>
-                                    <option value="<?php echo $row['country_id']; ?>" <?php if($row['country_id'] == $_SESSION['customer']['kh_quocgia']) {echo 'selected';} ?>><?php echo $row['country_name']; ?></option>
-                                    <?php
-                                }
-                                ?>
-                                </select>                                    
+                                    <option value="">Chọn quốc gia</option>
+                                        <?php
+                                        $statement = $pdo->prepare("SELECT * FROM quocgia ORDER BY country_name ASC");
+                                        $statement->execute();
+                                        $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+                                        foreach ($result as $row) {
+                                            ?>
+                                            <option value="<?php echo $row['country_id']; ?>" <?php if($row['country_id'] == $_SESSION['customer']['kh_quocgia']) {echo 'selected';} ?>><?php echo $row['country_name']; ?></option>
+                                            <?php
+                                        }
+                                        ?>
+                                    </select>                                 
                             </div>
                             
                             <div class="col-md-6 form-group">

@@ -179,7 +179,7 @@ if (isset($_POST['form1'])) {
                                 </div>
                                 <div class="col-md-6 form-group">
                                     <label for=""><?php echo "Số điện thoại" ?> *</label>
-                                    <input type="text" class="form-control" name="cust_phone" value="<?php if(isset($_POST['cust_phone'])){echo $_POST['cust_phone'];} ?>">
+                                    <input type="number" class="form-control" name="cust_phone" value="<?php if(isset($_POST['cust_phone'])){echo $_POST['cust_phone'];} ?>">
                                 </div>
                                 <div class="col-md-12 form-group">
                                     <label for=""><?php echo "Địa chỉ" ?> *</label>

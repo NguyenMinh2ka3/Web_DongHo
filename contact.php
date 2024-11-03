@@ -1,10 +1,12 @@
-<?php require_once('header.php'); ?>
 <style>
       .tblienhe{
+        margin: 50px;
         text-align: center;
         height: 300px;
     }
 </style>
+<?php require_once('header.php'); ?>
+
 <?php if(!isset($_SESSION['customer'])): ?>
                     <p class="tblienhe">
                         <a href="login.php" class="btn btn-md btn-danger"><?php echo "Vui lòng đăng nhập !"; ?></a>
@@ -19,12 +21,16 @@ if ((isset($_POST['form_lh']))&& (isset($_POST['sms_ten']))&&(isset($_POST['sms_
             strip_tags($_POST['sms_phone']),
             strip_tags($_POST['sms_message']),
         ));
+        $_SESSION['customer']['kh_ten'] = $_POST['sms_ten'];
+        $_SESSION['customer']['kh_email'] = $_POST['sms_email'];
+        $_SESSION['customer']['kh_sodienthoai'] = $_POST['sms_phone'];
         unset($_POST['sms_ten']);
         unset($_POST['sms_email']);
         unset($_POST['sms_phone']);
         unset($_POST['sms_message']);
         $success_message = "Chúc mừng bạn! Đã gửi liên hệ thành công ";
    
+     
 }
 
 ?>
@@ -36,18 +42,20 @@ if ((isset($_POST['form_lh']))&& (isset($_POST['sms_ten']))&&(isset($_POST['sms_
            <?php $csrf->echoInputField(); ?>
                             <div class="row">
                                 <div class="col-md-6">
+                                  <?php 
                                   
+                                  ?>
                                     <div class="form-group">
                                         <label for="name">Họ và tên</label>
-                                        <input type="text" class="form-control" name="sms_ten" placeholder="Nhập họ và tên"  required value="<?php echo isset($_POST['sms_ten'])?$_POST['sms_ten']:'';?>" >
+                                        <input type="text" class="form-control" name="sms_ten" placeholder="Nhập họ và tên"  readonly value="<?php echo $_SESSION['customer']['kh_ten'];?>" >
                                     </div>
                                     <div class="form-group">
                                         <label for="email">Địa chỉ Email</label>
-                                        <input type="email" class="form-control" name="sms_email" placeholder="Nhập email" required value="<?php echo isset($_POST['sms_email'])?$_POST['sms_email']:'';?>"  >
+                                        <input type="email" class="form-control" name="sms_email" placeholder="Nhập email" readonly value="<?php echo $_SESSION['customer']['kh_email'];?>"  >
                                     </div>
                                     <div class="form-group">
                                         <label for="email">Số điện thoại</label>
-                                        <input type="number" class="form-control" name="sms_phone" placeholder="Nhập số điện thoại"  required value="<?php echo isset($_POST['sms_phone'])?$_POST['sms_phone']:'';?>">
+                                        <input type="number" class="form-control" name="sms_phone" placeholder="Nhập số điện thoại"  readonly value="<?php echo $_SESSION['customer']['kh_sodienthoai'];?>">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
