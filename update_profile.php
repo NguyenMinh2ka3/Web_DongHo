@@ -82,8 +82,6 @@ if (isset($_POST['form1'])) {
     
 }
 ?>
-
-
 <div class="page">
     <div class="container">
         <div class="row">            
@@ -104,7 +102,7 @@ if (isset($_POST['form1'])) {
                     }
                     ?>
                     <form action="" method="post">
-                        <?php $csrf->echoInputField(); ?>
+                        
                         <div class="row">
                             <div class="col-md-6 form-group">
                                 <label for=""><?php echo "Tên" ?> *</label>
@@ -120,7 +118,7 @@ if (isset($_POST['form1'])) {
                             </div>
                             <div class="col-md-6 form-group">
                                 <label for=""><?php echo "Số điện thoại"; ?> *</label>
-                                <input type="text" class="form-control" name="cust_phone" value="<?php echo $_SESSION['customer']['kh_sodienthoai']; ?>">
+                                <input type="number" class="form-control" name="cust_phone" value="<?php echo $_SESSION['customer']['kh_sodienthoai']; ?>">
                             </div>
                             <div class="col-md-12 form-group">
                                 <label for=""><?php echo "Địa chỉ"; ?> *</label>
@@ -156,7 +154,7 @@ if (isset($_POST['form1'])) {
                                 <input type="text" class="form-control" name="cust_zip" value="<?php echo $_SESSION['customer']['kh_zip']; ?>">
                             </div>
                         </div>
-                        <input type="submit" class="btn btn-primary" value="<?php echo "Update"; ?>" name="form1">
+                        <input type="submit" class="btn btn-primary" value="<?php echo "Cập nhật"; ?>" name="form1">
                     </form>
                 </div>                
             </div>

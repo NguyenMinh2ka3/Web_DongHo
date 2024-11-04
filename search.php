@@ -59,7 +59,6 @@ if(!isset($_REQUEST['search_text'])) {
 	}
 }
 ?>
-
 <?php
     $search_text = strip_tags($_REQUEST['search_text']); 
     $search_text = '%' . $search_text . '%';
@@ -89,6 +88,4 @@ if(!isset($_REQUEST['search_text'])) {
         <h1 class="text-danger">Không tìm thấy sản phẩm nào.</h1>
     <?php endif; ?>
         </main>
-    
-
 <?php require_once('footer.php'); ?>

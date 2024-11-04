@@ -8,8 +8,8 @@
 		</style>
 		<div class="minhdaumaminh">		
 				<p>Nguyễn Đức Minh </p>
-				<p>Nguyễn Đức Minh </p>
-				<p>Nguyễn Đức Minh </p>
+				<p>Nguyễn Văn Trung </p>
+				<p>Nguyễn Thị Thủy Yến </p>
 				
 	</div>
 </section>
@@ -25,15 +25,10 @@
 <a href="#" class="scrollup">
 	<i class="fa fa-angle-up"></i>
 </a>
-
-
 <script src="assets/js/jquery-2.2.4.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
-<script src="https://js.stripe.com/v2/"></script>
-<script src="assets/js/megamenu.js"></script>
 <script src="assets/js/owl.carousel.min.js"></script>
-<script src="assets/js/owl.animate.js"></script>
-<script src="assets/js/jquery.bxslider.min.js"></script>
+
 <script src="assets/js/jquery.magnific-popup.min.js"></script>
 <script src="assets/js/rating.js"></script>
 <script src="assets/js/jquery.touchSwipe.min.js"></script>

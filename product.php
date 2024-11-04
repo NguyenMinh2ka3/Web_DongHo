@@ -10,8 +10,6 @@
         header('location: index.php');
         exit;
     }
-
-
 foreach($result as $row) {
     $p_name = $row['sp_ten'];
     $p_old_price = $row['sp_giacu'];
@@ -21,9 +19,6 @@ foreach($result as $row) {
     $p_short_description = $row['sp_chitietsp'];
     
 }
-
-
-
 if(isset($_POST['form_them_giohang'])) {
 
 	// Lấy số lượng tồn kho
@@ -71,7 +66,6 @@ if(isset($_POST['form_them_giohang'])) {
                     $i++;
                 }
                 $new_key = $i+1;
-
                 $_SESSION['giohang_id'][$new_key] = $_REQUEST['id'];
                 $_SESSION['giohang_soluong'][$new_key] = $_POST['soluong'];
                 $_SESSION['giohang_giamoi'][$new_key] = $_POST['giamoi'];
@@ -79,10 +73,8 @@ if(isset($_POST['form_them_giohang'])) {
                 $_SESSION['giohang_img'][$new_key] = $_POST['anhsp'];
     
                 $success_message1 = 'Thêm vào giỏ hàng thành công!';
-            }
-            
+            }  
         } 
-        
         else
     {       
         $_SESSION['giohang_id'][1] = $_REQUEST['id'];

@@ -64,7 +64,7 @@ if(isset($_POST['form1'])) {
                        <h2 class="giohang"><b><?php echo 'Giỏ hàng trống'; ?></b></h2> 
                 <?php else: ?>
                 <form action="" method="post">
-                    <?php $csrf->echoInputField();
+                    <?php 
                     
                     //Hiển thị sản phẩm trong giỏ hàng
                     ?>

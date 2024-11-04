@@ -1,25 +1,18 @@
 <?php
-// Error Reporting Turn On
-ini_set('error_reporting', E_ALL);
-
-// Host Name
+// Tên Host
 $dbhost = 'localhost';
 
-// Database Name
+// Tên database
 $dbname = 'shop_dongho';
 
-// Database Username
+// Tên user
 $dbuser = 'root';
 
-// Database Password
+// tên password
 $dbpass = '';
 
-// Defining base url
+// Đường dẫn mặc định 
 define("BASE_URL", "http://localhost/web_dongho/");
-
-// Getting Admin url
-define("ADMIN_URL", BASE_URL . "admin" . "/");
-
 try {
 	$pdo = new PDO("mysql:host={$dbhost};dbname={$dbname}", $dbuser, $dbpass);
 	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

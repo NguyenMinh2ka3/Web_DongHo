@@ -1,7 +1,7 @@
 <?php require_once('header.php'); ?>
 
 <?php
-// Check if the customer is logged in or not
+// Kiểm tra xem khách hàng đã đăng nhập hay chưa
 if(!isset($_SESSION['customer'])) {
     header('location: '.BASE_URL.'logout.php');
     exit;
@@ -19,9 +19,7 @@ if(!isset($_SESSION['customer'])) {
 
 <?php
 if (isset($_POST['form1'])) {
-
-
-    // update data into the database
+    // Cập nhật vào database
     $statement = $pdo->prepare("UPDATE khachhang SET                       
                             kh_s_ten=?, 
                             kh_s_cty=?, 
@@ -58,7 +56,6 @@ if (isset($_POST['form1'])) {
 
 }
 ?>
-
 <div class="page">
     <div class="container">
         <div class="row">            
@@ -76,7 +73,7 @@ if (isset($_POST['form1'])) {
                     }
                     ?>
                     <form action="" method="post">
-                        <?php $csrf->echoInputField(); ?>
+                        
                         <div class="row">                        
                             <div class="col-md-6">
                                 <h3><?php echo "Cập nhật thông tin nhận hàng" ?></h3>
@@ -90,7 +87,7 @@ if (isset($_POST['form1'])) {
                                 </div>
                                 <div class="form-group">
                                     <label for=""><?php echo "Số điện thoại" ?></label>
-                                    <input type="text" class="form-control" name="customer_kh_s_sodienthoai" value="<?php echo $_SESSION['customer']['kh_s_sodienthoai']; ?>">
+                                    <input type="number" class="form-control" name="customer_kh_s_sodienthoai" value="<?php echo $_SESSION['customer']['kh_s_sodienthoai']; ?>">
                                 </div>
                                 <div class="form-group">
                                     <label for=""><?php echo "Quốc gia" ?></label>

@@ -50,8 +50,7 @@ if(isset($_POST['form1'])) {
         <div class="row">
             <div class="col-md-12">
                 <div class="user-content">    
-                    <form action="" method="post">
-                        <?php $csrf->echoInputField(); ?>                  
+                    <form action="" method="post"> 
                         <div class="row">
                             <div class="col-md-4"></div>
                             <div class="col-md-4">
@@ -76,7 +75,6 @@ if(isset($_POST['form1'])) {
                                     <label for=""></label>
                                     <input type="submit" class="btn btn-primary" value="<?php echo "Đăng nhập" ?>" name="form1">
                                 </div>
-                                <a href="forget-password.php" style="color:#e4144d;"><?php echo "Lấy lại mật khẩu?" ?></a>
                             </div>
                         </div>                        
                     </form>

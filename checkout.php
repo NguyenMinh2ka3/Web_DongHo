@@ -213,7 +213,6 @@ if(!isset($_SESSION['giohang_id'])) {
                 <option value="cash">Tiền mặt</option>
             </select>
         </div>
-
         <!-- Form thanh toán chuyển khoản -->
         <form action="bank.php" method="post" id="bank_form" style="display: none;">
             <input type="hidden" name="amount" value="<?php echo $final_total; ?>">
@@ -226,7 +225,6 @@ if(!isset($_SESSION['giohang_id'])) {
                 <p>Chủ tài khoản: Nguyễn Đức Minh</p>
                 <p>Quốc gia: Việt Nam</p>
             </div>
-
             <!-- Thông tin giao dịch -->
             <div class="col-md-12 form-group">
                 <label for="transaction_info">Thông tin giao dịch <br>
@@ -235,8 +233,7 @@ if(!isset($_SESSION['giohang_id'])) {
                     </span>
                 </label>
                 <textarea name="transaction_info" class="form-control" cols="30" rows="5"></textarea>
-            </div>
-            
+            </div>  
             <!-- Nút gửi thanh toán -->
             <div class="col-md-12 form-group">
                 <input type="submit" class="btn btn-primary" value="Thanh toán" name="form3">
@@ -244,15 +241,13 @@ if(!isset($_SESSION['giohang_id'])) {
         </form>
     <!-- Form thanh toán tiền mặt -->
     <form action="cash.php" method="post" id="cash_form" style="display: none;">
-            <input type="hidden" name="amount" value="<?php echo $final_total; ?>">
-            
+            <input type="hidden" name="amount" value="<?php echo $final_total; ?>">  
             <!-- Thông tin thanh toán tiền mặt -->
             <div class="col-md-12 form-group">
                 <label for="cash_info">Thanh toán tiền mặt</label>
                 <p>Bạn sẽ thanh toán trực tiếp bằng tiền mặt khi nhận hàng.</p>
                 <p>Vui lòng đảm bảo rằng bạn đã nhập chính xác thông tin giao hàng.</p>
             </div>
-
             <!-- Nút xác nhận thanh toán -->
             <div class="col-md-12 form-group">
                 <input type="submit" class="btn btn-primary" value="Xác nhận thanh toán" name="form4">
@@ -260,7 +255,6 @@ if(!isset($_SESSION['giohang_id'])) {
         </form>
     </div>
 </div>
-
 <script>
 // Script để ẩn/hiện form thanh toán dựa trên phương thức thanh toán được chọn
 function togglePaymentForm() {
@@ -289,5 +283,4 @@ function togglePaymentForm() {
         </div>
     </div>
 </div>
-
 <?php require_once('footer.php'); ?>

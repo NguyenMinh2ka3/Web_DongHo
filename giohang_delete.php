@@ -1,12 +1,10 @@
 <?php require_once('header.php'); ?>
-
 <?php
 // Kiểm tra xem sản phẩm có hợp lệ không
 if (!isset($_REQUEST['id']) || !isset($_REQUEST['name'])) {
     header('location: cart.php');
     exit;
 }
-
 // Tạo mảng tạm từ các biến session để lưu trữ thông tin giỏ hàng hiện tại
 $cartData = [
     'giohang_id' => $_SESSION['giohang_id'],
@@ -33,7 +31,6 @@ foreach ($cartData['giohang_id'] as $i => $value) {
     $_SESSION['giohang_img'][$k] = $cartData['giohang_img'][$i];
     $k++;
 }
-
 // Quay lại trang giỏ hàng sau khi cập nhật
 header('location: cart.php');
 ?>

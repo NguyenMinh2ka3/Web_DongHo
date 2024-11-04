@@ -3,75 +3,74 @@
 <?php
 if (isset($_POST['form1'])) {
 
-    $valid = 1;
+    $giatri = 1;
 
     if(empty($_POST['cust_name'])) {
-        $valid = 0;
+        $giatri = 0;
         $error_message .= "Tên khách hàng không được để trống."."<br>";
     }
 
     if(empty($_POST['cust_email'])) {
-        $valid = 0;
+        $giatri = 0;
         $error_message .= "Email Address không được để trống"."<br>";
     } else {
         if (filter_var($_POST['cust_email'], FILTER_VALIDATE_EMAIL) === false) {
-            $valid = 0;
+            $giatri = 0;
             $error_message .= "Địa chỉ Email phải hợp lệ"."<br>";
         } else {
             $statement = $pdo->prepare("SELECT * FROM khachhang WHERE kh_email=?");
             $statement->execute(array($_POST['cust_email']));
             $total = $statement->rowCount();                            
             if($total) {
-                $valid = 0;
+                $giatri = 0;
                 $error_message .= "Địa chỉ Email đã tồn tại"."<br>";
             }
         }
     }
 
     if(empty($_POST['cust_phone'])) {
-        $valid = 0;
+        $giatri = 0;
         $error_message .= "Số điện thoại không được để trống"."<br>";
     }
 
     if(empty($_POST['cust_address'])) {
-        $valid = 0;
+        $giatri = 0;
         $error_message .= "Địa chỉ không được để trống"."<br>";
     }
 
     if(empty($_POST['cust_country'])) {
-        $valid = 0;
+        $giatri = 0;
         $error_message .= "Bạn phải chọn một quốc gia"."<br>";
     }
 
     if(empty($_POST['cust_city'])) {
-        $valid = 0;
+        $giatri = 0;
         $error_message .= "Thành phố không được để trống"."<br>";
     }
 
     if(empty($_POST['cust_state'])) {
-        $valid = 0;
+        $giatri = 0;
         $error_message .= "Quận không được để trống"."<br>";
     }
 
     if(empty($_POST['cust_zip'])) {
-        $valid = 0;
+        $giatri = 0;
         $error_message .= "Mã Zip không được để trống"."<br>";
     }
 
     if( empty($_POST['cust_password']) || empty($_POST['cust_re_password']) ) {
-        $valid = 0;
+        $giatri = 0;
         $error_message .= "Mật khẩu không được để trống"."<br>";
     }
 
     if( !empty($_POST['cust_password']) && !empty($_POST['cust_re_password']) ) {
         if($_POST['cust_password'] != $_POST['cust_re_password']) {
-            $valid = 0;
+            $giatri = 0;
             $error_message .= "Mật khẩu không khớp"."<br>";
         }
     }
 
-    if($valid == 1) {
-
+    if($giatri == 1) {
         $token = md5(time());
         $cust_datetime = date('Y-m-d h:i:s');
         $cust_timestamp = time();
@@ -151,7 +150,7 @@ if (isset($_POST['form1'])) {
             <div class="col-md-12">
                 <div class="user-content">
                     <form action="" method="post">
-                        <?php $csrf->echoInputField(); ?>
+                        
                         <div class="row">
                             <div class="col-md-2"></div>
                             <div class="col-md-8">

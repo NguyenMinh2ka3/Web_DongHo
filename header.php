@@ -1,31 +1,26 @@
-<!-- This is main configuration File -->
+<!--File cấu hình chính -->
 <?php
 ob_start();
 session_start();
 include("admin/inc/config.php");
-include("admin/inc/functions.php");
-include("admin/inc/CSRF_Protect.php");
-$csrf = new CSRF_Protect();
 $error_message = '';
 $success_message = '';
 $error_message1 = '';
 $success_message1 = '';
 
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <title>Nhom10_Shop.com</title>
-	<!-- Meta Tags -->
+	<!-- Thẻ meta-->
 	<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
 
-	<!-- Favicon -->
+	<!-- Logo Title -->
 	<link rel="icon" type="image/png" href="assets/uploads/favicon.png">
 
-	<!-- Stylesheets -->
+	<!-- Bảng Style -->
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
 	<link rel="stylesheet" href="assets/css/owl.carousel.min.css">
@@ -42,24 +37,25 @@ $success_message1 = '';
 	<link rel="stylesheet" href="assets/css/responsive.css">
 
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-
+<!-- Chia sẻ -->
 	  <script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5993ef01e2587a001253a261&product=inline-share-buttons"></script>
 </head>
 <body>
-<!--
-<div id="preloader">
-	<div id="status"></div>
-</div>-->
 
-<!-- top bar -->
+
+<!-- Hiệu ứng đăng nhập-->
+<!-- <div id="preloader">
+	<div id="status"></div>
+</div> -->
+
+<!-- Topbar -->
 <div class="top">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6 col-sm-6 col-xs-12">
 				<div class="left">
 					<ul>
-						<li><i class="fa fa-envelope-o"></i> <?php echo "NguyenMinh2003@gmail.com"; ?></li>
+						<li><i class="fa fa-envelope-o"></i> <?php echo "Nhom10shop@gmail.com"; ?></li>
 					</ul>
 				</div>
 			</div>
@@ -74,19 +70,14 @@ $success_message1 = '';
 		</div>
 	</div>
 </div>
-
-
 <div class="header">
 	<div class="container">
 		<div class="row inner">
 			<div class="col-md-4 logo">
-				<a href="index.php"><img src="assets/uploads/logodongho.png" alt="logo image"><a href="index.php"><b>Đồng Hồ Nhóm 10</b></a></a>
-
-			</div>
-			
+				<a href="index.php"><img src="assets/uploads/logoshop.png" alt="logo image"><a href="index.php"><b>Nhom10 Shop</b></a></a>
+			</div>		
 			<div class="col-md-5 right">
-				<ul>
-					
+				<ul>			
 					<?php
 					if(isset($_SESSION['customer'])) {
 						?>
@@ -100,13 +91,11 @@ $success_message1 = '';
 						<?php	
 					}
 					?>
-
 					<li><a href="cart.php"><i class="fa fa-shopping-cart"></i> <?php echo "Chi tiết giỏ hàng"; ?> </a></li>
 				</ul>
 			</div>
 			<div class="col-md-3 search-area">
-				<form class="navbar-form navbar-left" role="search" action="search.php" method="get">
-					<?php $csrf->echoInputField(); ?>
+				<form class="navbar-form navbar-left" role="search" action="search.php" method="get">				
 					<div class="form-group">
 						<input type="text" class="form-control search-top" placeholder="<?php echo "Tìm kiếm sản phẩm" ?>" name="search_text">
 					</div>

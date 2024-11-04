@@ -39,7 +39,7 @@ if ((isset($_POST['form_lh']))&& (isset($_POST['sms_ten']))&&(isset($_POST['sms_
 
 
 <form action="" method="post">
-           <?php $csrf->echoInputField(); ?>
+           
                             <div class="row">
                                 <div class="col-md-6">
                                   <?php 
