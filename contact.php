@@ -6,7 +6,6 @@
     }
 </style>
 <?php require_once('header.php'); ?>
-
 <?php if(!isset($_SESSION['customer'])): ?>
                     <p class="tblienhe">
                         <a href="login.php" class="btn btn-md btn-danger"><?php echo "Vui lòng đăng nhập !"; ?></a>
@@ -29,15 +28,8 @@ if ((isset($_POST['form_lh']))&& (isset($_POST['sms_ten']))&&(isset($_POST['sms_
         unset($_POST['sms_phone']);
         unset($_POST['sms_message']);
         $success_message = "Chúc mừng bạn! Đã gửi liên hệ thành công ";
-   
-     
 }
-
 ?>
-
-
-
-
 <form action="" method="post">
            
                             <div class="row">

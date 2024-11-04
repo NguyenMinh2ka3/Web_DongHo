@@ -213,6 +213,7 @@ if(!isset($_SESSION['giohang_id'])) {
                 <option value="cash">Tiền mặt</option>
             </select>
         </div>
+        
         <!-- Form thanh toán chuyển khoản -->
         <form action="bank.php" method="post" id="bank_form" style="display: none;">
             <input type="hidden" name="amount" value="<?php echo $final_total; ?>">
@@ -239,6 +240,7 @@ if(!isset($_SESSION['giohang_id'])) {
                 <input type="submit" class="btn btn-primary" value="Thanh toán" name="form3">
             </div>
         </form>
+
     <!-- Form thanh toán tiền mặt -->
     <form action="cash.php" method="post" id="cash_form" style="display: none;">
             <input type="hidden" name="amount" value="<?php echo $final_total; ?>">  

@@ -80,16 +80,7 @@ button:hover{
     color: #555;
     text-decoration: none;
 }
-
-
-
-
 </style>
-
-
-
-
-
 <?php  
     require_once 'admin/inc/config.php';
     $sql = $pdo->prepare("SELECT * FROM sanpham where sp_id BETWEEN 1 AND 10");
@@ -105,7 +96,7 @@ button:hover{
     $tatca_sp2=$sql2->fetchAll(PDO::FETCH_ASSOC)
    
 ?>
- 
+
 <div class="item1" >
 <div class="left-menu">
     <h3>Danh Mục Sản Phẩm</h3>

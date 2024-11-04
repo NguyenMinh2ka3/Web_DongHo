@@ -7,10 +7,9 @@
 			}
 		</style>
 		<div class="minhdaumaminh">		
-				<p>Nguyễn Đức Minh </p>
-				<p>Nguyễn Văn Trung </p>
-				<p>Nguyễn Thị Thủy Yến </p>
-				
+				<p>Nguyễn Đức Minh - 06/08/2003</p>
+				<p>Nguyễn Văn Trung - 24/05/2003</p>
+				<p>Nguyễn Thị Thủy Yến - 19/08/2003</p>	
 	</div>
 </section>
 <div class="footer-bottom">
