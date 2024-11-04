@@ -122,22 +122,22 @@ if(!isset($_SESSION['giohang_id'])) {
                             <table class="table table-responsive table-bordered bill-address">
                                 <tr>
                                     <td><?php echo "Tên người nhận" ?></td>
-                                    <td><?php echo $_SESSION['customer']['kh_s_ten']; ?></p></td>
+                                    <td><?php echo $_SESSION['customer']['kh_ten']; ?></p></td>
                                 </tr>
                                 <tr>
                                     <td><?php echo "Tên công ty" ?></td>
-                                    <td><?php echo $_SESSION['customer']['kh_s_cty']; ?></td>
+                                    <td><?php echo $_SESSION['customer']['kh_cty']; ?></td>
                                 </tr>
                                 <tr>
                                     <td><?php echo "Số điện thoại" ?></td>
-                                    <td><?php echo $_SESSION['customer']['kh_s_sodienthoai']; ?></td>
+                                    <td><?php echo $_SESSION['customer']['kh_sodienthoai']; ?></td>
                                 </tr>
                                 <tr>
                                     <td><?php echo "Quốc gia" ?></td>
                                     <td>
                                         <?php
                                         $statement = $pdo->prepare("SELECT * FROM quocgia WHERE country_id=?");
-                                        $statement->execute(array($_SESSION['customer']['kh_s_quocgia']));
+                                        $statement->execute(array($_SESSION['customer']['kh_quocgia']));
                                         $result = $statement->fetchAll(PDO::FETCH_ASSOC);
                                         foreach ($result as $row) {
                                             echo $row['country_name'];
@@ -148,28 +148,25 @@ if(!isset($_SESSION['giohang_id'])) {
                                 <tr>
                                     <td><?php echo "Địa chỉ"; ?></td>
                                     <td>
-                                        <?php echo nl2br($_SESSION['customer']['kh_s_diachi']); ?>
+                                        <?php echo nl2br($_SESSION['customer']['kh_diachi']); ?>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td><?php echo "Thành phố" ?></td>
-                                    <td><?php echo $_SESSION['customer']['kh_s_thanhpho']; ?></td>
+                                    <td><?php echo $_SESSION['customer']['kh_thanhpho']; ?></td>
                                 </tr>
                                 <tr>
                                     <td><?php echo "Quận" ?></td>
-                                    <td><?php echo $_SESSION['customer']['kh_s_quan']; ?></td>
+                                    <td><?php echo $_SESSION['customer']['kh_quan']; ?></td>
                                 </tr>
                                 <tr>
                                     <td><?php echo "Mã Zip" ?></td>
-                                    <td><?php echo $_SESSION['customer']['kh_s_zip']; ?></td>
+                                    <td><?php echo $_SESSION['customer']['kh_zip']; ?></td>
                                 </tr> 
                             </table>
                         </div>
                     </div>                    
                 </div>
-
-                
-
                 <div class="cart-buttons">
                     <ul>
                         <li><a href="cart.php" class="btn btn-primary"><?php echo "Quay lại giỏ hàng" ?></a></li>
@@ -183,14 +180,14 @@ if(!isset($_SESSION['giohang_id'])) {
                     	<?php
 		                $checkout_access = 1;
 		                if(		                    
-		                    ($_SESSION['customer']['kh_s_ten']=='') ||
-		                    ($_SESSION['customer']['kh_s_cty']=='') ||
-		                    ($_SESSION['customer']['kh_s_sodienthoai']=='') ||
-		                    ($_SESSION['customer']['kh_s_quocgia']=='') ||
-		                    ($_SESSION['customer']['kh_s_diachi']=='') ||
-		                    ($_SESSION['customer']['kh_s_thanhpho']=='') ||
-		                    ($_SESSION['customer']['kh_s_quan']=='') ||
-		                    ($_SESSION['customer']['kh_s_zip']=='')
+		                    ($_SESSION['customer']['kh_ten']=='') ||
+		                    ($_SESSION['customer']['kh_cty']=='') ||
+		                    ($_SESSION['customer']['kh_sodienthoai']=='') ||
+		                    ($_SESSION['customer']['kh_quocgia']=='') ||
+		                    ($_SESSION['customer']['kh_diachi']=='') ||
+		                    ($_SESSION['customer']['kh_thanhpho']=='') ||
+		                    ($_SESSION['customer']['kh_quan']=='') ||
+		                    ($_SESSION['customer']['kh_zip']=='')
 		                ) {
 		                    $checkout_access = 0;
 		                }
@@ -198,7 +195,7 @@ if(!isset($_SESSION['giohang_id'])) {
 		                <?php if($checkout_access == 0): ?>
 		                	<div class="col-md-12">
 				                <div style="color:red;font-size:22px;margin-bottom:50px;">
-                                Bạn phải điền tất cả thông tin giao hàng bên trên để thanh toán đơn hàng. Vui lòng điền thông tin =>  <a href="update_shipping.php" style="color:blue;text-decoration:underline;">Click vào đây</a>.
+                                Bạn phải điền tất cả thông tin giao hàng bên trên để thanh toán đơn hàng. Vui lòng điền thông tin =>  <a href="update_profile.php" style="color:blue;text-decoration:underline;">Click vào đây</a>.
 			                    </div>
 	                    	</div>
 	                	<?php else: ?>
@@ -213,7 +210,7 @@ if(!isset($_SESSION['giohang_id'])) {
                 <option value="cash">Tiền mặt</option>
             </select>
         </div>
-        
+
         <!-- Form thanh toán chuyển khoản -->
         <form action="bank.php" method="post" id="bank_form" style="display: none;">
             <input type="hidden" name="amount" value="<?php echo $final_total; ?>">

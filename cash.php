@@ -7,7 +7,7 @@ if (isset($_POST['form4']) && isset($_SESSION['customer'])) {
     $status = 'Xac nhan';
 
     // Lưu đơn hàng vào cơ sở dữ liệu
-    $stmt = $pdo->prepare("INSERT INTO orders (kh_id, total_amount, payment_method, status) VALUES (?, ?, ?, ?)");
+    $stmt = $pdo->prepare("INSERT INTO orders (order_kh_id, total_amount, payment_method, status) VALUES (?, ?, ?, ?)");
     $stmt->execute([$customer_id, $amount, $payment_method, $status]);
 
     $order_id = $pdo->lastInsertId();

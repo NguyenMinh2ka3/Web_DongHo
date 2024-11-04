@@ -1,8 +1,7 @@
 <style>
-      .chitiethd{
-        margin: 50px;
+      .table{
         text-align: center;
-        height: 300px;
+        height:200px;
     }
 </style>
 
@@ -48,7 +47,7 @@ $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <?php endforeach; ?>
             </table>
         <?php else: ?>
-            <p>Hiện tại bạn chưa có đơn hàng nào.</p>
+            <h4 class="s">Hiện tại bạn chưa có đơn hàng nào.</h4>
         <?php endif; ?>
     </div>
 

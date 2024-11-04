@@ -74,7 +74,6 @@ if (isset($_POST['form1'])) {
         $token = md5(time());
         $cust_datetime = date('Y-m-d h:i:s');
         $cust_timestamp = time();
-
         // Lưu vào cơ sở dữ liệu
         $statement = $pdo->prepare("INSERT INTO khachhang (
                                         kh_ten,
@@ -85,21 +84,13 @@ if (isset($_POST['form1'])) {
                                         kh_diachi,
                                         kh_thanhpho,
                                         kh_quan,
-                                        kh_zip,
-                                        kh_s_ten,
-                                        kh_s_cty,
-                                        kh_s_sodienthoai,
-                                        kh_s_quocgia,
-                                        kh_s_diachi,
-                                        kh_s_thanhpho,
-                                        kh_s_quan,
-                                        kh_s_zip,
+                                        kh_zip,                       
                                         kh_matkhau,
                                         kh_token,
                                         kh_ngaygio,
                                         kh_mocthoigian,
                                         kh_trangthai
-                                    ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+                                    ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
         $statement->execute(array(
                                         strip_tags($_POST['cust_name']),
                                         strip_tags($_POST['cust_cname']),
@@ -110,14 +101,7 @@ if (isset($_POST['form1'])) {
                                         strip_tags($_POST['cust_city']),
                                         strip_tags($_POST['cust_state']),
                                         strip_tags($_POST['cust_zip']),
-                                        '',
-                                        '',
-                                        '',
-                                        '',
-                                        '',
-                                        '',
-                                        '',
-                                        '',
+                                       
                                         $_POST['cust_password'],
                                         $token,
                                         $cust_datetime,

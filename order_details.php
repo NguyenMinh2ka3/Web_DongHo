@@ -30,7 +30,12 @@ if (isset($_GET['order_id'])) {
 }
 ?>
 <div class="container">
-        <h2 class="special">Chi tiết đơn hàng</h2>
+        <h2 class="special1">Thông tin đơn hàng</h2>
+        <p><strong>Tên người nhận:</strong> <?php echo $_SESSION['customer']['kh_ten']; ?></p>
+        <p><strong>Tên công ty:</strong> <?php echo $_SESSION['customer']['kh_cty']; ?></p>
+        <p><strong>Số điện thoại:</strong> <?php echo $_SESSION['customer']['kh_sodienthoai']; ?></p>
+        <p><strong>Địa chỉ:</strong> <?php echo nl2br($_SESSION['customer']['kh_diachi']); ?></p>
+        <p>---------------------------------------------------------------------------------------------</p> 
         <p><strong>Mã đơn hàng:</strong> <?php echo $order['id']; ?></p>
         <p><strong>Tổng tiền:</strong> <?php echo "$" . number_format($order['total_amount'], 1); ?></p>
         <p><strong>Phương thức thanh toán:</strong> <?php echo ucfirst($order['payment_method']); ?></p>

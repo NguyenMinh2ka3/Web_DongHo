@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 04, 2024 at 10:56 AM
+-- Generation Time: Nov 04, 2024 at 04:19 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -38,14 +38,6 @@ CREATE TABLE `khachhang` (
   `kh_thanhpho` varchar(100) NOT NULL,
   `kh_quan` varchar(100) NOT NULL,
   `kh_zip` varchar(30) NOT NULL,
-  `kh_s_ten` varchar(100) NOT NULL,
-  `kh_s_cty` varchar(100) NOT NULL,
-  `kh_s_sodienthoai` varchar(50) NOT NULL,
-  `kh_s_quocgia` int(11) NOT NULL,
-  `kh_s_diachi` text NOT NULL,
-  `kh_s_thanhpho` varchar(100) NOT NULL,
-  `kh_s_quan` varchar(100) NOT NULL,
-  `kh_s_zip` varchar(30) NOT NULL,
   `kh_matkhau` varchar(100) NOT NULL,
   `kh_ngaygio` varchar(100) NOT NULL,
   `kh_mocthoigian` varchar(100) NOT NULL,
@@ -57,14 +49,14 @@ CREATE TABLE `khachhang` (
 -- Dumping data for table `khachhang`
 --
 
-INSERT INTO `khachhang` (`kh_id`, `kh_ten`, `kh_cty`, `kh_email`, `kh_sodienthoai`, `kh_quocgia`, `kh_diachi`, `kh_thanhpho`, `kh_quan`, `kh_zip`, `kh_s_ten`, `kh_s_cty`, `kh_s_sodienthoai`, `kh_s_quocgia`, `kh_s_diachi`, `kh_s_thanhpho`, `kh_s_quan`, `kh_s_zip`, `kh_matkhau`, `kh_ngaygio`, `kh_mocthoigian`, `kh_trangthai`, `kh_token`) VALUES
-(6, 'Minhdz', 'Minh Thinh Phat', 'nguyenminhadmin@gmail.com', '0999999999', 237, 'Ha Nam', 'Ha Noi', 'Dong Da', '7000000', '', '', '', 0, '', '', '', '', '123', '2024-10-18 04:40:52', '1729255252', 1, ''),
-(7, 'Trung', 'aaa', 'trung@gmail.com', '123412', 237, 'Ninh Binh', 'Ha Noi', 'Hoang Mai', '700000', '', '', '', 0, '', '', '', '', '123', '2024-10-19 11:09:10', '1729321750', 1, ''),
-(9, 'HÃªllo minh nhÃ© ^^', 'Nguyá»…n Minh123', 'admin@gmail.com', '09999999888', 237, 'Nguyá»…n Minh', 'Ha Noi', 'Dong Da', '700000', 'Äá»“ng Thá»‹ Quá»³nh NhÆ°', 'QNhu123Company', '0999888999', 237, 'Ha Noi', 'Ha Noi', 'Hoang Mai', '890000', '123', '2024-10-25 12:40:41', '1729852841', 1, '1e9340b53767c26f70bacf774b4824f3'),
-(11, 'NguyenMinh2', 'Ã¡dfads', 'minh10@gmail.com', '099999999', 1, 'sadfasdf', 'sadfasd', 'dsfadsf', '123412', '', '', '', 0, '', '', '', '', '123', '2024-10-26 05:39:32', '1729957172', 1, '3e4d5638f5a51faf2751cbc2d2b063e8'),
-(12, 'minh', 'minhthinhphatCompany', 'mminh1@gmail.com', '0999999933', 237, '999 TrÃ­ch SÃ i, TÃ¢y Há»“, HÃ  Ná»™i', 'HÃ  Ná»™i', 'TÃ¢y Há»“', '9000000', '', '', '', 0, '', '', '', '', '123', '2024-11-03 04:22:49', '1730647369', 1, 'a4da793276b7fe2b8796fdad338faee5'),
-(13, 'NguyenVanTrun', 'trung123Abc', 'trungabc@gmail.com', '0123456666', 237, 'Ninh Binh', 'Ha Noi', 'Hoang Mai', '89899', 'Trung', 'Trá»§ngcongty', '0938412423', 230, 'USA', 'Michigan', 'Ann Arbor', '1432412', '123', '2024-11-04 09:47:00', '1730710020', 1, '1b83fbda67f6694e8ba4d4edcdb55a08'),
-(14, 'Thá»§y Yáº¿n', 'Yennnnnnnnnn', 'thuyyen@gmail.com', '0149341234', 237, 'Ha Noi', 'HaNoi', 'Hoang Mai', '141234312', 'Nguyá»…n Thá»‹ Thá»§y YÃªn', 'ThuyYenCompany', '09999338133', 237, '212 Ã” Chá»£ Dá»«a, Äá»‘ng Äa, HÃ  Ná»™i', 'HÃ  Ná»™i', 'Äá»‘ng Äa', '87333112', '123', '2024-11-04 10:08:31', '1730711311', 1, '755a05af8223eb171f5a6b6a99f26ea2');
+INSERT INTO `khachhang` (`kh_id`, `kh_ten`, `kh_cty`, `kh_email`, `kh_sodienthoai`, `kh_quocgia`, `kh_diachi`, `kh_thanhpho`, `kh_quan`, `kh_zip`, `kh_matkhau`, `kh_ngaygio`, `kh_mocthoigian`, `kh_trangthai`, `kh_token`) VALUES
+(6, 'Minhdz', 'Minh Thinh Phat', 'nguyenminhadmin@gmail.com', '0999999999', 237, 'Ha Nam', 'Ha Noi', 'Dong Da', '7000000', '123', '2024-10-18 04:40:52', '1729255252', 1, ''),
+(7, 'Trung', 'aaa', 'trung@gmail.com', '123412', 237, 'Ninh Binh', 'Ha Noi', 'Hoang Mai', '700000', '123', '2024-10-19 11:09:10', '1729321750', 1, ''),
+(9, 'HÃªllo minh nhÃ© ^^', 'Nguyá»…n Minh123', 'admin@gmail.com', '09999999888', 237, 'Nguyá»…n Minh', 'Ha Noi', 'Dong Da', '700000', '123', '2024-10-25 12:40:41', '1729852841', 1, '1e9340b53767c26f70bacf774b4824f3'),
+(11, 'NguyenMinh2', 'Ã¡dfads', 'minh10@gmail.com', '099999999', 1, 'sadfasdf', 'sadfasd', 'dsfadsf', '123412', '123', '2024-10-26 05:39:32', '1729957172', 1, '3e4d5638f5a51faf2751cbc2d2b063e8'),
+(12, 'minh', 'minhthinhphatCompany', 'mminh1@gmail.com', '0999999933', 237, '999 TrÃ­ch SÃ i, TÃ¢y Há»“, HÃ  Ná»™i', 'HÃ  Ná»™i', 'TÃ¢y Há»“', '9000000', '123', '2024-11-03 04:22:49', '1730647369', 1, 'a4da793276b7fe2b8796fdad338faee5'),
+(13, 'NguyenVanTrun', 'trung123Abc', 'trungabc@gmail.com', '0123456666', 237, 'Ninh Binh', 'Ha Noi', 'Hoang Mai', '89899', '123', '2024-11-04 09:47:00', '1730710020', 1, '1b83fbda67f6694e8ba4d4edcdb55a08'),
+(14, 'Thá»§y Yáº¿n', 'Yennnnnnnnnn', 'thuyyen@gmail.com', '0149341234', 237, 'Ha Noi', 'HaNoi', 'Hoang Mai', '141234312', '123', '2024-11-04 10:08:31', '1730711311', 1, '755a05af8223eb171f5a6b6a99f26ea2');
 
 -- --------------------------------------------------------
 
@@ -96,6 +88,76 @@ INSERT INTO `lienhe` (`lh_hoten`, `lh_email`, `lh_sdt`, `lh_tinnhan`, `lh_id`) V
 ('admin', 'admin@gmail.com', '0123456789', 'Say Hi ', 34),
 ('admin', 'admin@gmail.com', '0123456789', 'ChÃ o Quá»³nh NhÆ° nhaaaaa', 35),
 ('HÃªllo minh nhÃ© ^^', 'admin@gmail.com', '0999999988', 'Hellloooo ', 36);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `id` int(11) NOT NULL,
+  `order_kh_id` int(11) DEFAULT NULL,
+  `total_amount` decimal(10,2) DEFAULT NULL,
+  `payment_method` varchar(50) DEFAULT NULL,
+  `status` varchar(20) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`id`, `order_kh_id`, `total_amount`, `payment_method`, `status`, `created_at`) VALUES
+(15, 13, 21014.00, 'Chuyen khoan', 'Thanh cong', '2024-11-04 12:56:25'),
+(16, 13, 14846.00, 'Tien mat', 'Xac nhan', '2024-11-04 12:57:54'),
+(17, 13, 10045.00, 'Chuyen khoan', 'Thanh cong', '2024-11-04 13:07:52'),
+(18, 13, 10045.00, 'Chuyen khoan', 'Thanh cong', '2024-11-04 13:08:07'),
+(19, 13, 10045.00, 'Tien mat', 'Xac nhan', '2024-11-04 13:11:24'),
+(20, 13, 34437.00, 'Chuyen khoan', 'Thanh cong', '2024-11-04 13:51:36'),
+(21, 9, 38437.00, 'Tien mat', 'Xac nhan', '2024-11-04 14:09:21'),
+(22, 13, 4494.00, 'Chuyen khoan', 'Thanh cong', '2024-11-04 15:08:58'),
+(23, 13, 6716.00, 'Chuyen khoan', 'Thanh cong', '2024-11-04 15:15:23'),
+(24, 13, 14846.00, 'Tien mat', 'Xac nhan', '2024-11-04 15:17:16');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `order_detail`
+--
+
+CREATE TABLE `order_detail` (
+  `id` int(11) NOT NULL,
+  `order_id` int(11) DEFAULT NULL,
+  `product_id` int(11) DEFAULT NULL,
+  `product_name` varchar(255) DEFAULT NULL,
+  `quantity` int(11) DEFAULT NULL,
+  `price` decimal(10,2) DEFAULT NULL,
+  `total` decimal(10,2) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `order_detail`
+--
+
+INSERT INTO `order_detail` (`id`, `order_id`, `product_id`, `product_name`, `quantity`, `price`, `total`) VALUES
+(2, 15, 15, 'Seiko Presage SPB467J1', 3, 6988.00, 20964.00),
+(3, 16, 17, 'Citizen BM7521', 4, 3699.00, 14796.00),
+(4, 17, 1, 'Rolex Spain', 5, 1999.00, 9995.00),
+(5, 18, 1, 'Rolex Spain', 5, 1999.00, 9995.00),
+(6, 19, 1, 'Rolex Spain', 5, 1999.00, 9995.00),
+(7, 20, 1, 'Rolex Spain', 5, 1999.00, 9995.00),
+(8, 20, 2, 'Datejust 36', 4, 2499.00, 9996.00),
+(9, 20, 4, 'Cosmograph Daytona', 1, 6999.00, 6999.00),
+(10, 20, 5, 'Oyster Perpetual 41', 1, 5999.00, 5999.00),
+(11, 20, 6, 'Sky-Dweller', 2, 699.00, 1398.00),
+(12, 21, 1, 'Rolex Spain', 10, 1999.00, 19990.00),
+(13, 21, 8, 'Titoni Airmaster 83743', 1, 6999.00, 6999.00),
+(14, 21, 12, 'Fossil Raquel Watch Ring', 2, 5699.00, 11398.00),
+(15, 22, 9, 'Titoni Cosmo Queen 729', 2, 2222.00, 4444.00),
+(16, 23, 9, 'Titoni Cosmo Queen 729', 3, 2222.00, 6666.00),
+(17, 24, 14, 'Seiko 5 Field Sports Style', 3, 3699.00, 11097.00),
+(18, 24, 14, 'Seiko 5 Field Sports Style', 1, 3699.00, 3699.00);
 
 -- --------------------------------------------------------
 
@@ -380,20 +442,20 @@ CREATE TABLE `sanpham` (
 --
 
 INSERT INTO `sanpham` (`sp_id`, `sp_ten`, `sp_giacu`, `sp_giamoi`, `sp_tonkho`, `sp_img`, `sp_chitietsp`) VALUES
-(1, 'Rolex Spain', 2500, 1999, 10, 'anh1.png', '<p><span style=\"color: rgb(10, 10, 10); font-family: opensans, \"Helvetica Neue\", Helvetica, Helvetica, Arial, sans-serif;\"><b>Chat lieu:</b> Kham kim cuong D.</br>\r\n<b>So hieu san pham:</b> AE-1999MHD-1AVDF</br>\r\n<b>Duong kinh mat so:</b> 41 mm x 40.1 mm</br>\r\n<b>Be day mat so:</b> 11.5 mm</br>\r\n<b>Chong nuoc:</b> 10 ATM</br>\r\n<b>Xuat xu:</b> Viet Nam</br>\r\n'),
-(2, 'Datejust 36', 3999, 2499, 9, 'anh2.png', '<p><span style=\"color: rgb(10, 10, 10); font-family: opensans, \"Helvetica Neue\", Helvetica, Helvetica, Arial, sans-serif;\"><b>Chat lieu:</b> Bach Kim Ngoc Luc Bao.</br>\r\n<b>So hieu san pham:</b> NM-9200BHD-1AVDF</br>\r\n<b>Duong kinh mat so:</b> 48 mm x 45.1 mm</br>\r\n<b>Be day mat so:</b> 15.5 mm</br>\r\n<b>Chong nuoc:</b> 10 ATM</br>\r\n<b>Xuat xu:</b> USA</br>\r\n'),
+(1, 'Rolex Spain', 2500, 1999, 85, 'anh1.png', '<p><span style=\"color: rgb(10, 10, 10); font-family: opensans, \"Helvetica Neue\", Helvetica, Helvetica, Arial, sans-serif;\"><b>Chat lieu:</b> Kham kim cuong D.</br>\r\n<b>So hieu san pham:</b> AE-1999MHD-1AVDF</br>\r\n<b>Duong kinh mat so:</b> 41 mm x 40.1 mm</br>\r\n<b>Be day mat so:</b> 11.5 mm</br>\r\n<b>Chong nuoc:</b> 10 ATM</br>\r\n<b>Xuat xu:</b> Viet Nam</br>\r\n'),
+(2, 'Datejust 36', 3999, 2499, 5, 'anh2.png', '<p><span style=\"color: rgb(10, 10, 10); font-family: opensans, \"Helvetica Neue\", Helvetica, Helvetica, Arial, sans-serif;\"><b>Chat lieu:</b> Bach Kim Ngoc Luc Bao.</br>\r\n<b>So hieu san pham:</b> NM-9200BHD-1AVDF</br>\r\n<b>Duong kinh mat so:</b> 48 mm x 45.1 mm</br>\r\n<b>Be day mat so:</b> 15.5 mm</br>\r\n<b>Chong nuoc:</b> 10 ATM</br>\r\n<b>Xuat xu:</b> USA</br>\r\n'),
 (3, 'Yacht-Master 42', 1900, 1499, 5, 'anh3.png', '<p><span style=\"color: rgb(10, 10, 10); font-family: opensans, \"Helvetica Neue\", Helvetica, Helvetica, Arial, sans-serif;\"><b>Chat lieu:</b> Thach Anh Ma Vang 9999.</br>\r\n<b>So hieu san pham:</b> DM-AZ200WHD-1AVDF</br>\r\n<b>Duong kinh mat so:</b> 39 mm x 37.1 mm</br>\r\n<b>Be day mat so:</b> 12.5 mm</br>\r\n<b>Chong nuoc:</b> 11 ATM</br>\r\n<b>Xuat xu:</b> Itali/br>\r\n'),
-(4, 'Cosmograph Daytona', 9500, 6999, 6, 'anh4.png', '<p><span style=\"color: rgb(10, 10, 10); font-family: opensans, \"Helvetica Neue\", Helvetica, Helvetica, Arial, sans-serif;\"><b>Chat lieu:</b> Ma Vang 9999.</br>\r\n<b>So hieu san pham:</b> AE-1200WHD-1AVDF</br>\r\n<b>Duong kinh mat so:</b> 45 mm x 42.1 mm</br>\r\n<b>Be day mat so:</b> 12.5 mm</br>\r\n<b>Chong nuoc:</b> 12 ATM</br>\r\n<b>Xuat xu:</b> Itali</br>\r\n'),
-(5, 'Oyster Perpetual 41', 8999, 5999, 11, 'anh5.png', '<p><span style=\"color: rgb(10, 10, 10); font-family: opensans, \"Helvetica Neue\", Helvetica, Helvetica, Arial, sans-serif;\"><b>Chat lieu:</b> Ma vang 24carat.</br>\r\n<b>So hieu san pham:</b> AE-1200WHD-1AVDF</br>\r\n<b>Duong kinh mat so:</b> 45 mm x 42.1 mm</br>\r\n<b>Be day mat so:</b> 12.5 mm</br>\r\n<b>Chong nuoc:</b> 10 ATM</br>\r\n<b>Xuat xu:</b> Thuy Si</br>\r\n'),
-(6, 'Sky-Dweller', 899, 699, 22, 'anh6.png', '<p><span style=\"color: rgb(10, 10, 10); font-family: opensans, \"Helvetica Neue\", Helvetica, Helvetica, Arial, sans-serif;\"><b>Chat lieu:</b> Ma vang 24carat.</br>\r\n<b>So hieu san pham:</b> AE-1200WHD-1AVDF</br>\r\n<b>Duong kinh mat so:</b> 45 mm x 42.1 mm</br>\r\n<b>Be day mat so:</b> 12.5 mm</br>\r\n<b>Chong nuoc:</b> 10 ATM</br>\r\n<b>Xuat xu:</b> Thuy Si</br>\r\n'),
+(4, 'Cosmograph Daytona', 9500, 6999, 5, 'anh4.png', '<p><span style=\"color: rgb(10, 10, 10); font-family: opensans, \"Helvetica Neue\", Helvetica, Helvetica, Arial, sans-serif;\"><b>Chat lieu:</b> Ma Vang 9999.</br>\r\n<b>So hieu san pham:</b> AE-1200WHD-1AVDF</br>\r\n<b>Duong kinh mat so:</b> 45 mm x 42.1 mm</br>\r\n<b>Be day mat so:</b> 12.5 mm</br>\r\n<b>Chong nuoc:</b> 12 ATM</br>\r\n<b>Xuat xu:</b> Itali</br>\r\n'),
+(5, 'Oyster Perpetual 41', 8999, 5999, 10, 'anh5.png', '<p><span style=\"color: rgb(10, 10, 10); font-family: opensans, \"Helvetica Neue\", Helvetica, Helvetica, Arial, sans-serif;\"><b>Chat lieu:</b> Ma vang 24carat.</br>\r\n<b>So hieu san pham:</b> AE-1200WHD-1AVDF</br>\r\n<b>Duong kinh mat so:</b> 45 mm x 42.1 mm</br>\r\n<b>Be day mat so:</b> 12.5 mm</br>\r\n<b>Chong nuoc:</b> 10 ATM</br>\r\n<b>Xuat xu:</b> Thuy Si</br>\r\n'),
+(6, 'Sky-Dweller', 899, 699, 20, 'anh6.png', '<p><span style=\"color: rgb(10, 10, 10); font-family: opensans, \"Helvetica Neue\", Helvetica, Helvetica, Arial, sans-serif;\"><b>Chat lieu:</b> Ma vang 24carat.</br>\r\n<b>So hieu san pham:</b> AE-1200WHD-1AVDF</br>\r\n<b>Duong kinh mat so:</b> 45 mm x 42.1 mm</br>\r\n<b>Be day mat so:</b> 12.5 mm</br>\r\n<b>Chong nuoc:</b> 10 ATM</br>\r\n<b>Xuat xu:</b> Thuy Si</br>\r\n'),
 (7, 'Doxa Noble D173TCM', 9500, 6999, 12, 'anh7.png', '<p><span style=\"color: rgb(10, 10, 10); font-family: opensans, \"Helvetica Neue\", Helvetica, Helvetica, Arial, sans-serif;\"><b>Chat lieu:</b> Ma vang 24carat.</br>\r\n<b>So hieu san pham:</b> AE-1200WHD-1AVDF</br>\r\n<b>Duong kinh mat so:</b> 45 mm x 42.1 mm</br>\r\n<b>Be day mat so:</b> 12.5 mm</br>\r\n<b>Chong nuoc:</b> 10 ATM</br>\r\n<b>Xuat xu:</b> Thuy Si</br>\r\n'),
-(8, 'Titoni Airmaster 83743', 0, 6999, 21, 'anh8.png', '<p><span style=\"color: rgb(10, 10, 10); font-family: opensans, \"Helvetica Neue\", Helvetica, Helvetica, Arial, sans-serif;\"><b>Chat lieu:</b> Ma vang 24carat.</br>\r\n<b>So hieu san pham:</b> AE-1200WHD-1AVDF</br>\r\n<b>Duong kinh mat so:</b> 45 mm x 42.1 mm</br>\r\n<b>Be day mat so:</b> 12.5 mm</br>\r\n<b>Chong nuoc:</b> 10 ATM</br>\r\n<b>Xuat xu:</b> Thuy Si</br>\r\n'),
-(9, 'Titoni Cosmo Queen 729', 2899, 2222, 21, 'anh9.png', '<p><span style=\"color: rgb(10, 10, 10); font-family: opensans, \"Helvetica Neue\", Helvetica, Helvetica, Arial, sans-serif;\"><b>Chat lieu:</b> Ma vang 24carat.</br>\r\n<b>So hieu san pham:</b> AE-1200WHD-1AVDF</br>\r\n<b>Duong kinh mat so:</b> 45 mm x 42.1 mm</br>\r\n<b>Be day mat so:</b> 12.5 mm</br>\r\n<b>Chong nuoc:</b> 10 ATM</br>\r\n<b>Xuat xu:</b> Thuy Si</br>\r\n'),
+(8, 'Titoni Airmaster 83743', 0, 6999, 20, 'anh8.png', '<p><span style=\"color: rgb(10, 10, 10); font-family: opensans, \"Helvetica Neue\", Helvetica, Helvetica, Arial, sans-serif;\"><b>Chat lieu:</b> Ma vang 24carat.</br>\r\n<b>So hieu san pham:</b> AE-1200WHD-1AVDF</br>\r\n<b>Duong kinh mat so:</b> 45 mm x 42.1 mm</br>\r\n<b>Be day mat so:</b> 12.5 mm</br>\r\n<b>Chong nuoc:</b> 10 ATM</br>\r\n<b>Xuat xu:</b> Thuy Si</br>\r\n'),
+(9, 'Titoni Cosmo Queen 729', 2899, 2222, 16, 'anh9.png', '<p><span style=\"color: rgb(10, 10, 10); font-family: opensans, \"Helvetica Neue\", Helvetica, Helvetica, Arial, sans-serif;\"><b>Chat lieu:</b> Ma vang 24carat.</br>\r\n<b>So hieu san pham:</b> AE-1200WHD-1AVDF</br>\r\n<b>Duong kinh mat so:</b> 45 mm x 42.1 mm</br>\r\n<b>Be day mat so:</b> 12.5 mm</br>\r\n<b>Chong nuoc:</b> 10 ATM</br>\r\n<b>Xuat xu:</b> Thuy Si</br>\r\n'),
 (10, 'Tissot T140', 0, 1234, 9, 'anh10.png', '<p><span style=\"color: rgb(10, 10, 10); font-family: opensans, \"Helvetica Neue\", Helvetica, Helvetica, Arial, sans-serif;\"><b>Chat lieu:</b> Ma vang 24carat.</br>\r\n<b>So hieu san pham:</b> AE-1200WHD-1AVDF</br>\r\n<b>Duong kinh mat so:</b> 45 mm x 42.1 mm</br>\r\n<b>Be day mat so:</b> 12.5 mm</br>\r\n<b>Chong nuoc:</b> 10 ATM</br>\r\n<b>Xuat xu:</b> Thuy Si</br>\r\n'),
 (11, 'Citizen EM0899', 9969, 5999, 19, 'anh11.png', '<p><span style=\"color: rgb(10, 10, 10); font-family: opensans, \"Helvetica Neue\", Helvetica, Helvetica, Arial, sans-serif;\"><b>Chat lieu:</b> Ma vang 24carat.</br>\r\n<b>So hieu san pham:</b> AE-1200WHD-1AVDF</br>\r\n<b>Duong kinh mat so:</b> 45 mm x 42.1 mm</br>\r\n<b>Be day mat so:</b> 12.5 mm</br>\r\n<b>Chong nuoc:</b> 10 ATM</br>\r\n<b>Xuat xu:</b> Thuy Si</br>\r\n'),
-(12, 'Fossil Raquel Watch Ring', 6999, 5699, 26, 'anh12.png', '<p><span style=\"color: rgb(10, 10, 10); font-family: opensans, \"Helvetica Neue\", Helvetica, Helvetica, Arial, sans-serif;\"><b>Chat lieu:</b> Ma vang 24carat.</br>\r\n<b>So hieu san pham:</b> AE-1200WHD-1AVDF</br>\r\n<b>Duong kinh mat so:</b> 45 mm x 42.1 mm</br>\r\n<b>Be day mat so:</b> 12.5 mm</br>\r\n<b>Chong nuoc:</b> 10 ATM</br>\r\n<b>Xuat xu:</b> Thuy Si</br>\r\n'),
+(12, 'Fossil Raquel Watch Ring', 6999, 5699, 24, 'anh12.png', '<p><span style=\"color: rgb(10, 10, 10); font-family: opensans, \"Helvetica Neue\", Helvetica, Helvetica, Arial, sans-serif;\"><b>Chat lieu:</b> Ma vang 24carat.</br>\r\n<b>So hieu san pham:</b> AE-1200WHD-1AVDF</br>\r\n<b>Duong kinh mat so:</b> 45 mm x 42.1 mm</br>\r\n<b>Be day mat so:</b> 12.5 mm</br>\r\n<b>Chong nuoc:</b> 10 ATM</br>\r\n<b>Xuat xu:</b> Thuy Si</br>\r\n'),
 (13, 'King Seiko SJE109J1', 8999, 6999, 18, 'anh13.png', '<p><span style=\"color: rgb(10, 10, 10); font-family: opensans, \"Helvetica Neue\", Helvetica, Helvetica, Arial, sans-serif;\"><b>Chat lieu:</b> Ma vang 24carat.</br>\r\n<b>So hieu san pham:</b> AE-1200WHD-1AVDF</br>\r\n<b>Duong kinh mat so:</b> 45 mm x 42.1 mm</br>\r\n<b>Be day mat so:</b> 12.5 mm</br>\r\n<b>Chong nuoc:</b> 10 ATM</br>\r\n<b>Xuat xu:</b> Thuy Si</br>\r\n'),
-(14, 'Seiko 5 Field Sports Style', 5999, 3699, 15, 'anh14.png', '<p><span style=\"color: rgb(10, 10, 10); font-family: opensans, \"Helvetica Neue\", Helvetica, Helvetica, Arial, sans-serif;\"><b>Chat lieu:</b> Ma vang 24carat.</br>\r\n<b>So hieu san pham:</b> AE-1200WHD-1AVDF</br>\r\n<b>Duong kinh mat so:</b> 45 mm x 42.1 mm</br>\r\n<b>Be day mat so:</b> 12.5 mm</br>\r\n<b>Chong nuoc:</b> 10 ATM</br>\r\n<b>Xuat xu:</b> Thuy Si</br>\r\n'),
+(14, 'Seiko 5 Field Sports Style', 5999, 3699, 11, 'anh14.png', '<p><span style=\"color: rgb(10, 10, 10); font-family: opensans, \"Helvetica Neue\", Helvetica, Helvetica, Arial, sans-serif;\"><b>Chat lieu:</b> Ma vang 24carat.</br>\r\n<b>So hieu san pham:</b> AE-1200WHD-1AVDF</br>\r\n<b>Duong kinh mat so:</b> 45 mm x 42.1 mm</br>\r\n<b>Be day mat so:</b> 12.5 mm</br>\r\n<b>Chong nuoc:</b> 10 ATM</br>\r\n<b>Xuat xu:</b> Thuy Si</br>\r\n'),
 (15, 'Seiko Presage SPB467J1', 0, 6988, 18, 'anh15.png', '<p><span style=\"color: rgb(10, 10, 10); font-family: opensans, \"Helvetica Neue\", Helvetica, Helvetica, Arial, sans-serif;\"><b>Chat lieu:</b> Ma vang 24carat.</br>\r\n<b>So hieu san pham:</b> AE-1200WHD-1AVDF</br>\r\n<b>Duong kinh mat so:</b> 45 mm x 42.1 mm</br>\r\n<b>Be day mat so:</b> 12.5 mm</br>\r\n<b>Chong nuoc:</b> 10 ATM</br>\r\n<b>Xuat xu:</b> Thuy Si</br>\r\n'),
 (16, 'Orient Sun And Moon Open Heart', 8999, 5999, 29, 'anh16.png', '<p><span style=\"color: rgb(10, 10, 10); font-family: opensans, \"Helvetica Neue\", Helvetica, Helvetica, Arial, sans-serif;\"><b>Chat lieu:</b> Ma vang 24carat.</br>\r\n<b>So hieu san pham:</b> AE-1200WHD-1AVDF</br>\r\n<b>Duong kinh mat so:</b> 45 mm x 42.1 mm</br>\r\n<b>Be day mat so:</b> 12.5 mm</br>\r\n<b>Chong nuoc:</b> 10 ATM</br>\r\n<b>Xuat xu:</b> Thuy Si</br>\r\n'),
 (17, 'Citizen BM7521', 5999, 3699, 32, 'anh17.png', '<p><span style=\"color: rgb(10, 10, 10); font-family: opensans, \"Helvetica Neue\", Helvetica, Helvetica, Arial, sans-serif;\"><b>Chat lieu:</b> Ma vang 24carat.</br>\r\n<b>So hieu san pham:</b> AE-1200WHD-1AVDF</br>\r\n<b>Duong kinh mat so:</b> 45 mm x 42.1 mm</br>\r\n<b>Be day mat so:</b> 12.5 mm</br>\r\n<b>Chong nuoc:</b> 10 ATM</br>\r\n<b>Xuat xu:</b> Thuy Si</br>\r\n'),
@@ -428,6 +490,21 @@ ALTER TABLE `lienhe`
   ADD PRIMARY KEY (`lh_id`);
 
 --
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `kh_id` (`order_kh_id`);
+
+--
+-- Indexes for table `order_detail`
+--
+ALTER TABLE `order_detail`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `order_id` (`order_id`),
+  ADD KEY `product_id` (`product_id`);
+
+--
 -- Indexes for table `quocgia`
 --
 ALTER TABLE `quocgia`
@@ -456,6 +533,18 @@ ALTER TABLE `lienhe`
   MODIFY `lh_id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+
+--
+-- AUTO_INCREMENT for table `order_detail`
+--
+ALTER TABLE `order_detail`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
 -- AUTO_INCREMENT for table `quocgia`
 --
 ALTER TABLE `quocgia`
@@ -466,6 +555,23 @@ ALTER TABLE `quocgia`
 --
 ALTER TABLE `sanpham`
   MODIFY `sp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `orders`
+--
+ALTER TABLE `orders`
+  ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`order_kh_id`) REFERENCES `khachhang` (`kh_id`);
+
+--
+-- Constraints for table `order_detail`
+--
+ALTER TABLE `order_detail`
+  ADD CONSTRAINT `order_detail_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`),
+  ADD CONSTRAINT `order_detail_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `sanpham` (`sp_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
