@@ -5,17 +5,13 @@
         text-align: center;
     }
 </style>
-
-
 <?php require_once('header.php'); ?>
-
 <?php
 if(!isset($_SESSION['giohang_id'])) {
     header('location: cart.php');
     exit;
 }
 ?>
-
 <div class="page">
     <div class="container">
         <div class="row">
@@ -94,7 +90,7 @@ if(!isset($_SESSION['giohang_id'])) {
                         </tr>
                         <?php endfor;
                         $shipping_cost=50;
-                        
+                            
                         ?>           
                         <tr>
                             <th colspan="7" class="total-text"><?php echo "Tổng phụ"; ?></th>

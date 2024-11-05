@@ -9,7 +9,7 @@ if(isset($_POST['form1'])) {
     } else {
         
         $cust_email = strip_tags($_POST['cust_email']);
-        $cust_password = strip_tags($_POST['cust_password']);
+        $cust_password = strip_tags(md5($_POST['cust_password']));
         
         $statement = $pdo->prepare("SELECT * FROM khachhang WHERE kh_email=?");
         $statement->execute(array($cust_email));
@@ -23,7 +23,7 @@ if(isset($_POST['form1'])) {
         if($total==0) {
             $error_message .= "Địa chỉ Email không khớp.".'<br>';
         } else {
-            //using MD5 form
+        
             if( $row_password != $cust_password) {
                 $error_message .= "Mật khẩu không chính xác".'<br>';
             } else {
