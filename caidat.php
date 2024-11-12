@@ -1,3 +1,10 @@
+<style>
+      .caidat{
+        margin: 50px;
+        text-align: center;
+        height: 200px;
+    }
+</style>
 <?php require_once('header.php'); ?>
 
 
@@ -25,8 +32,8 @@ if(!isset($_SESSION['customer'])) {
             </div>
             <div class="col-md-12">
                 <div class="user-content">
-                    <h3 class="text-center">
-                        <?php echo "Thiết lập cài đặt" ?>
+                    <h3 class="caidat">
+                        Thiết lập cài đặt
                     </h3>
                 </div>                
             </div>

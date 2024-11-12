@@ -195,7 +195,7 @@ if(!isset($_SESSION['giohang_id'])) {
 			                    </div>
 	                    	</div>
 	                	<?php else: ?>
-		                	<div class="col-md-4">
+		                <div class="col-md-4">
     <div class="row">
         <!-- Chọn phương thức thanh toán -->
         <div class="col-md-12 form-group">

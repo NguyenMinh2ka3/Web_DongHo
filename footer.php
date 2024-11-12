@@ -16,7 +16,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 copyright">
-				<?php echo "Cấm sao chép dưới mọi hình thức => @Bản quyền thuộc về Nhóm 10" ?>
+				<?php echo "@Bản quyền thuộc về Nhóm 10" ?>
 			</div>
 		</div>
 	</div>

@@ -3,6 +3,11 @@
         text-align: center;
         height:200px;
     }
+    .s{
+        margin: 50px;
+        text-align: center;
+        height: 200px;
+    }
 </style>
 
 <?php require_once('header.php'); ?>

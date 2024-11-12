@@ -100,8 +100,7 @@ if (isset($_POST['form1'])) {
                                         strip_tags($_POST['cust_address']),
                                         strip_tags($_POST['cust_city']),
                                         strip_tags($_POST['cust_state']),
-                                        strip_tags($_POST['cust_zip']),
-                                       
+                                        strip_tags($_POST['cust_zip']),                                     
                                         md5($_POST['cust_password']),
                                         $token,
                                         $cust_datetime,

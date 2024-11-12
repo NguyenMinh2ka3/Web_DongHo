@@ -21,41 +21,44 @@ else {
 <?php
 //Kiểm tra và cập nhật lại thông tin khách hàng
 if (isset($_POST['form1'])) {
+    $giatri = 1;
     if(empty($_POST['cust_name'])) {
+        $giatri = 0;
         $error_message .= "Tên không được để trống!"."<br>";
     }
 
     if(empty($_POST['cust_phone'])) {
-        $valid = 0;
+        $giatri = 0;
         $error_message .= "Số điện thoại không được để trống!"."<br>";
     }
 
     if(empty($_POST['cust_address'])) {
-        $valid = 0;
+        $giatri = 0;
         $error_message .= "Địa chỉ không được để trống!"."<br>";
     }
 
     if(empty($_POST['cust_country'])) {
-        $valid = 0;
+        $giatri = 0;
         $error_message .= "Bạn vui lòng chọn 1 quốc gia!"."<br>";
     }
 
     if(empty($_POST['cust_city'])) {
-        $valid = 0;
+        $giatri = 0;
         $error_message .= "Thành phố không được để trống!"."<br>";
     }
 
     if(empty($_POST['cust_state'])) {
-        $valid = 0;
+        $giatri = 0;
         $error_message .= "Quận không được để trống!"."<br>";
     }
 
     if(empty($_POST['cust_zip'])) {
-        $valid = 0;
+        $giatri = 0;
         $error_message .= "Mã Zip không được để trống!"."<br>";
     }
 
         // Cập nhật thông tin vào database
+    if ($giatri == 1) {
         $statement = $pdo->prepare("UPDATE khachhang SET kh_ten=?, kh_cty=?, kh_sodienthoai=?, kh_quocgia=?, kh_diachi=?, kh_thanhpho=?, kh_quan=?, kh_zip=? WHERE kh_id=?");
         $statement->execute(array(
                     strip_tags($_POST['cust_name']),
@@ -80,6 +83,8 @@ if (isset($_POST['form1'])) {
         $_SESSION['customer']['kh_quan'] = $_POST['cust_state'];
         $_SESSION['customer']['kh_zip'] = $_POST['cust_zip'];
     
+    }
+
 }
 ?>
 <div class="page">

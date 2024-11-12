@@ -34,7 +34,7 @@ if(isset($_POST['form1'])) {
         }
     }
    //Thông báo 
-    $error_message .= '\nSố lượng mặt hàng khác đã được cập nhật thành công!';
+    $success_message .= '\nSố lượng mặt hàng khác đã được cập nhật thành công!';
     ?>
 
     <?php if($allow_update == 0): ?>
@@ -45,8 +45,8 @@ if(isset($_POST['form1'])) {
 
 <?php } ?>
 
-<?php if ($error_message): ?>
-    <script>alert('<?php echo nl2br($error_message); ?>');</script>
+<?php if ($success_message): ?>
+    <script>alert('<?php echo nl2br($success_message); ?>');</script>
 <?php elseif ($success_message): ?>
     <script>alert('<?php echo $success_message; ?>');</script>
 <?php endif; ?>
